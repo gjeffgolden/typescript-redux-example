@@ -8,6 +8,13 @@ import { reducers } from './reducers/index'
 
 const store = createStore(reducers, applyMiddleware(thunk))
 
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.querySelector('#root')
+)
+
 // interface AppProps {
 //     color?: string
 // }
@@ -40,9 +47,3 @@ const store = createStore(reducers, applyMiddleware(thunk))
 //     }
 // }
 
-ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.querySelector('#root')
-)
